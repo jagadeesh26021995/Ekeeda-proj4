@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Body Mass Index Calaculator</title>
+    <script>
+        function Bmi(){
+var h=parseInt(document.getElementById('height').value);
+var w=parseInt(document.getElementById('weight').value);
+var m=h/100;
+var m2=m*m;
+var bmi=w/m2;
+document.getElementById("bmi").innerHTML="BMI:&nbsp;" +bmi.toFixed(2);
+
+if(bmi<=18.5)
+{
+    document.getElementById("status").innerHTML="Underweight"
+}
+else if(bmi<=24.9)
+{
+    document.getElementById("status").innerHTML="Normal"
+}
+else if(bmi<=39.9)
+{
+    document.getElementById("status").innerHTML="Overweight"
+}
+else if(bmi>39.9)
+{
+    document.getElementById("status").innerHTML="obese"
+}
+}
+    </script>
+</head>
+<body>
+    <h1 class="Head"><center><span style="color:rgb(113, 142, 229)">B</span>ody <span style="color:rgb(113, 142, 229)">M</span>ass <span style="color:rgb(113, 142, 229)">I</span>ndex Calculator</center></h1>
+    <div class="square">
+        <div class="content">
+        <input type="text" class="age"><label for="age">&ensp;Age</label>&ensp;
+        <input type="radio" name="gender" value="male"> Male
+<input type="radio" name="gender" value="female"> Female<br><br><br>
+<input type="text" id="height"><label for="height">&ensp;Height(cm)</label>&ensp;<input type="text"  id="weight"><label for="Weight">&ensp;Weight(Kg)</label><br><br><br>
+<button type="button" onclick="Bmi()"><center><strong>Submit</strong></center></button>
+<p></p>
+</div>
+    </div>
+    <div id="status"></div>
+    <div id="bmi"></div>
+</body>
+</html>
